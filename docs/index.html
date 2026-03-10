@@ -17,12 +17,12 @@ body{
   justify-content:center;
   text-align:center;
   color:white;
-  background: url('https://www.wallpaperuse.com/wallp/24-244917_m.png') no-repeat center center fixed;
-  background-size: cover;
+  background: linear-gradient(135deg, #ff9fc3, #a0d4ff);
   overflow:hidden;
 }
-h1{font-size:2.8rem;margin-bottom:10px;text-shadow: 0 0 10px #ff3b6b, 0 0 20px #ff8fa3;}
-p{opacity:.9;margin-bottom:25px;text-shadow: 0 0 10px #ff3b6b, 0 0 20px #ff8fa3;}
+
+h1{font-size:2.8rem;margin-bottom:10px;text-shadow: 0 0 10px #ff9fc3, 0 0 20px #a0d4ff;}
+p{opacity:.9;margin-bottom:25px;text-shadow: 0 0 8px #ff9fc3, 0 0 15px #a0d4ff;}
 
 .buttons{
   display:flex;
@@ -33,22 +33,18 @@ p{opacity:.9;margin-bottom:25px;text-shadow: 0 0 10px #ff3b6b, 0 0 20px #ff8fa3;
 .buttons a{
   text-decoration:none;
   color:white;
-  background:rgba(255,255,255,0.2);
+  background:rgba(255,255,255,0.15);
   padding:14px;
-  border-radius:16px;
+  border-radius:50px;
   font-weight:600;
   transition:.3s;
   backdrop-filter:blur(10px);
-  text-shadow:0 0 8px #ff3b6b;
+  text-shadow:0 0 6px #ff9fc3;
 }
 .buttons a:hover{
-  transform:scale(1.08);
-  background:rgba(255,255,255,0.35);
-  box-shadow:0 0 20px rgba(255,59,107,0.7),0 0 40px rgba(255,143,163,0.7);
-}
-
-.stream{
-  background:linear-gradient(45deg,#ff004c,#ff5e7e)!important;
+  transform:scale(1.05);
+  background:rgba(255,255,255,0.3);
+  box-shadow:0 0 15px #ff9fc3,0 0 25px #a0d4ff;
 }
 
 footer{
@@ -58,38 +54,40 @@ footer{
   font-size:.9rem;
 }
 
-/* аватар */
-.avatar-static{
+/* абстрактный blob аватар */
+.avatar-blob{
   width:150px;
   height:150px;
   margin-bottom:20px;
-  border-radius:20px;
-  box-shadow:0 0 20px #ff6b8a,0 0 40px #ff3b6b,0 0 60px #ff8fa3;
-  animation:avatarFloat 3s ease-in-out infinite;
+  border-radius:50%;
+  background: radial-gradient(circle at 30% 30%, #ff9fc3, #a0d4ff);
+  box-shadow:0 0 20px #ff9fc3,0 0 40px #a0d4ff;
+  animation:blobFloat 3s ease-in-out infinite;
 }
-@keyframes avatarFloat{
+
+@keyframes blobFloat{
   0%{transform:translateY(0px);}
-  50%{transform:translateY(-10px);}
+  50%{transform:translateY(-8px);}
   100%{transform:translateY(0px);}
 }
 
 /* сердечки курсора */
 .heart{
   position:fixed;
-  font-size:18px;
+  font-size:16px;
   pointer-events:none;
   animation:heart 1s linear forwards;
 }
 @keyframes heart{
   0%{transform:translateY(0) scale(1);opacity:1;}
-  100%{transform:translateY(-60px) scale(0);opacity:0;}
+  100%{transform:translateY(-50px) scale(0);opacity:0;}
 }
 
 /* сакура */
 .sakura{
   position:absolute;
   top:-20px;
-  font-size:20px;
+  font-size:18px;
   animation:sakuraFall linear infinite;
 }
 @keyframes sakuraFall{
@@ -100,7 +98,7 @@ footer{
 /* мобильная адаптация */
 @media(max-width:500px){
   .buttons{width:200px;}
-  .avatar-static{width:120px;height:120px;}
+  .avatar-blob{width:120px;height:120px;}
   h1{font-size:2.2rem;}
 }
 </style>
@@ -108,10 +106,8 @@ footer{
 
 <body>
 
-<!-- статичный аватар (можно заменить на любое изображение) -->
-<div class="avatar-static">
-  <img src="https://mc-heads.net/avatar/Steve/200" alt="avatar" style="width:100%;height:100%;border-radius:15px;">
-</div>
+<!-- абстрактный blob аватар -->
+<div class="avatar-blob"></div>
 
 <h1>Yapponecc 💗</h1>
 <p>Добро пожаловать на мою страницу</p>
