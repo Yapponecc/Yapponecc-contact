@@ -1,150 +1,106 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yapponecc</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yapponecc | Linktree</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{
-  font-family:'Poppins',sans-serif;
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:white;
-  background: linear-gradient(135deg, #ff9fc3, #a0d4ff);
-  overflow:hidden;
-}
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #ff9fc3, #a0d4ff);
+            overflow: hidden;
+            color: white;
+        }
 
-h1{font-size:2.8rem;margin-bottom:10px;text-shadow: 0 0 10px #ff9fc3, 0 0 20px #a0d4ff;}
-p{opacity:.9;margin-bottom:25px;text-shadow: 0 0 8px #ff9fc3, 0 0 15px #a0d4ff;}
+        /* Эффект стекла для карточки */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 40px;
+            padding: 40px;
+            width: 90%;
+            max-width: 420px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            z-index: 10;
+            transition: transform 0.1s ease-out;
+            transform-style: preserve-3d;
+        }
 
-.buttons{
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-  width:250px;
-}
-.buttons a{
-  text-decoration:none;
-  color:white;
-  background:rgba(255,255,255,0.15);
-  padding:14px;
-  border-radius:50px;
-  font-weight:600;
-  transition:.3s;
-  backdrop-filter:blur(10px);
-  text-shadow:0 0 6px #ff9fc3;
-}
-.buttons a:hover{
-  transform:scale(1.05);
-  background:rgba(255,255,255,0.3);
-  box-shadow:0 0 15px #ff9fc3,0 0 25px #a0d4ff;
-}
+        .avatar-blob {
+            width: 120px; height: 120px;
+            background: radial-gradient(circle at 30% 30%, #ff9fc3, #a0d4ff);
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            box-shadow: 0 0 30px rgba(255,159,195,0.5);
+            animation: float 3s ease-in-out infinite;
+        }
 
-footer{
-  position:absolute;
-  bottom:15px;
-  opacity:.7;
-  font-size:.9rem;
-}
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
-/* абстрактный blob аватар */
-.avatar-blob{
-  width:150px;
-  height:150px;
-  margin-bottom:20px;
-  border-radius:50%;
-  background: radial-gradient(circle at 30% 30%, #ff9fc3, #a0d4ff);
-  box-shadow:0 0 20px #ff9fc3,0 0 40px #a0d4ff;
-  animation:blobFloat 3s ease-in-out infinite;
-}
+        h1 { font-size: 2.2rem; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+        .subtitle { opacity: 0.8; font-size: 0.9rem; margin-bottom: 30px; }
 
-@keyframes blobFloat{
-  0%{transform:translateY(0px);}
-  50%{transform:translateY(-8px);}
-  100%{transform:translateY(0px);}
-}
+        /* Кнопки */
+        .buttons { display: flex; flex-direction: column; gap: 15px; }
+        .buttons a {
+            text-decoration: none; color: white;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 20px;
+            border-radius: 20px;
+            display: flex; flex-direction: column; align-items: flex-start;
+            transition: 0.3s;
+            position: relative; overflow: hidden;
+        }
+        .buttons a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.03) translateZ(20px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
 
-/* сердечки курсора */
-.heart{
-  position:fixed;
-  font-size:16px;
-  pointer-events:none;
-  animation:heart 1s linear forwards;
-}
-@keyframes heart{
-  0%{transform:translateY(0) scale(1);opacity:1;}
-  100%{transform:translateY(-50px) scale(0);opacity:0;}
-}
+        .btn-title { font-weight: 600; display: flex; align-items: center; gap: 10px; font-size: 1rem; }
+        .btn-sub { font-size: 0.75rem; opacity: 0.6; margin-left: 28px; }
 
-/* сакура */
-.sakura{
-  position:absolute;
-  top:-20px;
-  font-size:18px;
-  animation:sakuraFall linear infinite;
-}
-@keyframes sakuraFall{
-  0%{transform:translateY(-10vh) rotate(0deg);opacity:1;}
-  100%{transform:translateY(110vh) rotate(360deg);opacity:0;}
-}
+        /* Музыка */
+        .music-player {
+            position: fixed; top: 20px; right: 20px; width: 45px; height: 45px;
+            background: rgba(255,255,255,0.2); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; z-index: 100; border: 1px solid rgba(255,255,255,0.3);
+        }
+        .playing i { animation: spin 3s linear infinite; color: #ff9fc3; }
+        @keyframes spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
 
-/* мобильная адаптация */
-@media(max-width:500px){
-  .buttons{width:200px;}
-  .avatar-blob{width:120px;height:120px;}
-  h1{font-size:2.2rem;}
-}
-</style>
+        /* Эффекты (Сакура/Сердечки) */
+        .sakura { position: absolute; top: -20px; animation: fall linear infinite; pointer-events: none; }
+        @keyframes fall { to { transform: translateY(110vh) rotate(360deg); opacity: 0; } }
+        .heart { position: fixed; pointer-events: none; animation: heartOut 1s forwards; color: #ff9fc3; }
+        @keyframes heartOut { to { transform: translateY(-50px) scale(0); opacity: 0; } }
+    </style>
 </head>
-
 <body>
 
-<!-- абстрактный blob аватар -->
-<div class="avatar-blob"></div>
+    <div class="music-player" id="musicBtn">
+        <i class="fas fa-music"></i>
+        <audio id="bgMusic" loop src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+    </div>
 
-<h1>Yapponecc 💗</h1>
-<p>Добро пожаловать на мою страницу</p>
+    <div class="glass-card" id="card">
+        <div class="avatar-blob"></div>
+        <h1>Yapponecc 💗</h1>
+        <p class="subtitle">Content Creator from Kazakhstan</p>
 
-<div class="buttons">
-<a href="https://t.me/yapponecc1">Telegram</a>
-<a href="https://discord.com/users/yapponecc">Discord</a>
-<a href="mailto:iropot6@gmail.com">Email</a>
-<a class="stream" href="#">🎮 Смотреть стрим</a>
-</div>
-
-<footer>© 2026 Yapponecc</footer>
-
-<script>
-// сердечки курсора
-document.addEventListener("mousemove",function(e){
-  let heart=document.createElement("div");
-  heart.className="heart";
-  heart.innerHTML="❤";
-  heart.style.left=e.clientX+"px";
-  heart.style.top=e.clientY+"px";
-  document.body.appendChild(heart);
-  setTimeout(()=>heart.remove(),1000);
-});
-
-// сакура
-function createSakura(){
-  let sakura=document.createElement("div");
-  sakura.className="sakura";
-  sakura.innerHTML="🌸";
-  sakura.style.left=Math.random()*100+"vw";
-  sakura.style.animationDuration=(5+Math.random()*5)+"s";
-  document.body.appendChild(sakura);
-  setTimeout(()=>sakura.remove(),10000);
-}
-setInterval(createSakura,600);
-</script>
-
-</body>
-</html>
+        <div class="buttons">
+            <a
+              
