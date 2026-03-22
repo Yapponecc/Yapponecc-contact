@@ -3,27 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yapponecc 💗 Цели</title>
+    <title>Yapponecc 💗 Hub</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Poppins', sans-serif;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
-            /* Более глубокий и насыщенный градиент */
             background: linear-gradient(-45deg, #ff7eb3, #6a11cb, #ff4d94, #2575fc);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
-            overflow: hidden;
-            position: relative;
+            padding: 20px;
         }
 
         @keyframes gradientBG {
@@ -32,111 +30,83 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Темная стеклянная карточка */
         .glass-card {
-            background: rgba(0, 0, 0, 0.6); /* Темная подложка для глубины */
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 40px;
-            padding: 40px;
-            width: 90%;
-            max-width: 420px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-            z-index: 10;
-            position: relative;
-        }
-
-        /* Заголовки с тенями */
-        h1 { font-size: 2.8rem; margin-bottom: 5px; color: #fff; text-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-        .tagline { opacity: .9; margin-bottom: 20px; font-size: 0.95rem; color: #ffb7d5; font-weight: 600; }
-
-        /* Блок Цели (темный контрастный) */
-        .goal-container {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 20px;
-            padding: 15px;
-            margin-bottom: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .goal-title { font-size: 0.85rem; font-weight: 600; color: #fff; margin-bottom: 8px; }
-        .progress-bar {
+            padding: 30px;
             width: 100%;
-            height: 12px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 6px;
-            overflow: hidden;
-        }
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #ff7eb3, #ff4d94);
-            width: 45%; /* Твой прогресс */
-            border-radius: 6px;
-            box-shadow: 0 0 15px rgba(255, 126, 179, 0.6);
+            max-width: 440px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+            z-index: 10;
         }
 
-        /* Аватар-блоб */
-        .avatar-blob {
-            width: 110px;
-            height: 110px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #ff7eb3, #70a1ff);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            animation: blobFloat 3s ease-in-out infinite;
-            display: flex; align-items: center; justify-content: center; font-size: 3rem;
+        h1 { font-size: 2.2rem; margin-bottom: 5px; text-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        .tagline { opacity: .8; margin-bottom: 20px; font-size: 0.9rem; color: #ffb7d5; }
+
+        /* МАЙНКРАФТ СТИЛЬ ДЛЯ ДОНАТОВ */
+        .mc-style {
+            font-family: 'Press Start 2P', cursive;
+            background: #be0000 !important; /* Насыщенный красный */
+            border: 4px solid #5d0000 !important;
+            image-rendering: pixelated;
+            margin-top: 10px;
+            box-shadow: 0 6px 0 #5d0000;
+            transform: scale(1);
         }
 
-        @keyframes blobFloat { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        .mc-style:hover {
+            transform: translateY(-3px) !important;
+            background: #ff0000 !important;
+            box-shadow: 0 8px 0 #8a0000 !important;
+        }
 
-        /* Кнопки */
-        .buttons { display: flex; flex-direction: column; gap: 14px; width: 100%; }
+        .mc-style .btn-content {
+            font-size: 0.7rem !important; /* Уменьшаем размер из-за специфики шрифта */
+            text-transform: uppercase;
+        }
+
+        .mc-icon {
+            width: 24px;
+            height: 24px;
+            image-rendering: pixelated;
+        }
+
+        /* Остальные кнопки */
+        .buttons { display: flex; flex-direction: column; gap: 12px; width: 100%; }
 
         .buttons a {
             text-decoration: none;
             color: white;
-            background: rgba(255, 255, 255, 0.05); /* Темные в покое */
+            background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 16px 20px;
-            border-radius: 22px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            padding: 14px 18px;
+            border-radius: 18px;
+            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            position: relative;
-            overflow: hidden;
         }
 
-        /* КОНТРАСТ ПРИ НАВЕДЕНИИ: Ярко-розовый */
-        .buttons a:hover {
-            transform: scale(1.02) translateY(-5px);
-            background: #ff4d94; 
-            border-color: #ff7eb3;
-            box-shadow: 0 15px 30px rgba(255, 77, 148, 0.4);
+        .buttons a:hover:not(.mc-style) {
+            background: rgba(255, 77, 148, 0.8);
+            transform: translateX(5px);
         }
 
-        .btn-content { display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 1.1rem; }
-        .btn-sub { font-size: 0.75rem; opacity: 0.8; margin-left: 33px; font-weight: 400; color: #eee; }
+        .btn-content { display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 1rem; }
+        .btn-sub { font-size: 0.7rem; opacity: 0.7; margin-left: 36px; }
 
-        .buttons a:hover .btn-sub { color: #fff; opacity: 1; }
-
-        /* Спец-стиль для стрима */
-        .stream-btn {
-            border: 1px solid #ff4d94 !important;
-            animation: pulse 2s infinite;
+        .avatar-blob {
+            width: 90px; height: 90px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff7eb3, #70a1ff);
+            display: flex; align-items: center; justify-content: center; font-size: 2.5rem;
         }
 
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 77, 148, 0.6); }
-            70% { box-shadow: 0 0 0 15px rgba(255, 77, 148, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 77, 148, 0); }
-        }
-
-        .sakura {
-            position: fixed; top: -10%; pointer-events: none; z-index: 1;
-        }
-
-        footer { position: absolute; bottom: 15px; opacity: .5; font-size: .8rem; color: #fff; z-index: 5; }
+        .sakura { position: fixed; top: -10%; pointer-events: none; z-index: 1; }
     </style>
 </head>
 <body>
@@ -144,39 +114,38 @@
     <div class="glass-card">
         <div class="avatar-blob">🌸</div>
         <h1>Yapponecc</h1>
-        <p class="tagline">Welcome to my world ✨</p>
-
-        <div class="goal-container">
-            <div class="goal-title">Цель: 5000 подписчиков</div>
-            <div class="progress-bar">
-                <div class="progress-fill" style="width:45%"></div>
-            </div>
-        </div>
+        <p class="tagline">Support & Community ✨</p>
 
         <div class="buttons">
-            <a href="https://www.tiktok.com/@yapponec?_r=1&_t=ZS-94FQa3ilFvM" class="stream-btn" target="_blank">
-                <div class="btn-content"><i class="fa-solid fa-play"></i> Live Stream</div>
-                <div class="btn-sub">Присоединяйся сейчас!</div>
+            <a href="https://www.donationalerts.com/r/yapponecc" class="mc-style" target="_blank">
+                <div class="btn-content">
+                    <img src="https://st.donationalerts.com/favicon.ico" class="mc-icon" alt="DA">
+                    Donate Alerts
+                </div>
+                <div style="font-size: 10px; margin-top: 5px; margin-left: 36px; font-family: 'Poppins'">Поддержи стрим монетой!</div>
             </a>
+
+            <a href="#" class="mc-style" onclick="alert('Kaspi Gold: ТВОЙ_НОМЕР')">
+                <div class="btn-content">
+                    <img src="https://kaspi.kz/img/favicon/apple-touch-icon.png" class="mc-icon" alt="Kaspi">
+                    Kaspi Gold
+                </div>
+                <div style="font-size: 10px; margin-top: 5px; margin-left: 36px; font-family: 'Poppins'">Прямой перевод (Казахстан)</div>
+            </a>
+
+            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 10px 0;">
 
             <a href="https://t.me/+06kgQmNA1ypjOGFi" target="_blank">
-                <div class="btn-content"><i class="fa-brands fa-telegram"></i> Telegram Канал</div>
-                <div class="btn-sub">Мои мысли, новости и анонсы</div>
+                <div class="btn-content"><i class="fa-brands fa-telegram"></i> Telegram</div>
+                <div class="btn-sub">Анонсы и новости</div>
             </a>
 
-            <a href="https://t.me/yappopec" target="_blank">
-                <div class="btn-content"><i class="fa-solid fa-paper-plane"></i> Личный Telegram</div>
-                <div class="btn-sub">Связаться со мной напрямую</div>
-            </a>
-
-            <a href="https://discord.com/users/yapponecc" target="_blank">
-                <div class="btn-content"><i class="fa-brands fa-discord"></i> Личный Discord</div>
-                <div class="btn-sub">Для общения и игр</div>
+            <a href="https://www.tiktok.com/@yapponec" target="_blank">
+                <div class="btn-content"><i class="fa-brands fa-tiktok"></i> TikTok</div>
+                <div class="btn-sub">Мои нарезки тут</div>
             </a>
         </div>
     </div>
-
-    <footer>Created with 💗 by Yapponecc</footer>
 
     <script>
         function createSakura() {
@@ -184,20 +153,14 @@
             leaf.classList.add('sakura');
             leaf.innerHTML = '🌸';
             leaf.style.left = Math.random() * 100 + 'vw';
-            
             document.body.appendChild(leaf);
-            
             const animation = leaf.animate([
                 { transform: `translateY(-10vh) rotate(0deg)`, opacity: 0.8 },
                 { transform: `translateY(110vh) rotate(${Math.random() * 360}deg)`, opacity: 0 }
-            ], {
-                duration: Math.random() * 4000 + 6000,
-                easing: 'linear'
-            });
-
+            ], { duration: Math.random() * 3000 + 5000, easing: 'linear' });
             animation.onfinish = () => { leaf.remove(); };
         }
-        setInterval(createSakura, 500);
+        setInterval(createSakura, 600);
     </script>
 </body>
 </html>
