@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yapponecc 💗 Hub</title>
+    <title>Yapponecc | SUPPORT HUB</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
@@ -16,9 +16,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
             color: white;
-            background: linear-gradient(-45deg, #ff7eb3, #6a11cb, #ff4d94, #2575fc);
+            background: linear-gradient(-45deg, #1a1a2e, #6a11cb, #ff4d94, #0f3460);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             padding: 20px;
@@ -31,118 +30,119 @@
         }
 
         .glass-card {
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 40px;
-            padding: 30px;
+            border-radius: 35px;
+            padding: 35px 25px;
             width: 100%;
-            max-width: 440px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
-            z-index: 10;
+            max-width: 400px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            position: relative;
         }
 
-        h1 { font-size: 2.2rem; margin-bottom: 5px; text-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-        .tagline { opacity: .8; margin-bottom: 20px; font-size: 0.9rem; color: #ffb7d5; }
+        /* Новая главная аватарка - Кристалл */
+        .main-avatar {
+            width: 100px; height: 100px;
+            margin: 0 auto 15px;
+            background: linear-gradient(135deg, #00f2ff, #ff007f);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 3rem;
+            animation: float 4s ease-in-out infinite, rotateCrystal 10s linear infinite;
+            box-shadow: 0 0 30px rgba(255, 0, 127, 0.5);
+        }
 
-        /* МАЙНКРАФТ СТИЛЬ ДЛЯ ДОНАТОВ */
-        .mc-style {
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
+        h1 { font-family: 'Press Start 2P', cursive; font-size: 1.2rem; margin-bottom: 10px; color: #fff; }
+        .tagline { font-size: 0.85rem; opacity: 0.7; margin-bottom: 25px; letter-spacing: 1px; }
+
+        .buttons { display: flex; flex-direction: column; gap: 15px; }
+
+        /* Кнопки в стиле Minecraft */
+        .mc-btn {
             font-family: 'Press Start 2P', cursive;
-            background: #be0000 !important; /* Насыщенный красный */
-            border: 4px solid #5d0000 !important;
-            image-rendering: pixelated;
-            margin-top: 10px;
-            box-shadow: 0 6px 0 #5d0000;
-            transform: scale(1);
-        }
-
-        .mc-style:hover {
-            transform: translateY(-3px) !important;
-            background: #ff0000 !important;
-            box-shadow: 0 8px 0 #8a0000 !important;
-        }
-
-        .mc-style .btn-content {
-            font-size: 0.7rem !important; /* Уменьшаем размер из-за специфики шрифта */
-            text-transform: uppercase;
-        }
-
-        .mc-icon {
-            width: 24px;
-            height: 24px;
-            image-rendering: pixelated;
-        }
-
-        /* Остальные кнопки */
-        .buttons { display: flex; flex-direction: column; gap: 12px; width: 100%; }
-
-        .buttons a {
             text-decoration: none;
             color: white;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 14px 18px;
-            border-radius: 18px;
-            transition: all 0.3s ease;
+            background: #d30000;
+            border: 4px solid #5d0000;
+            padding: 15px;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
+            image-rendering: pixelated;
+            box-shadow: 0 5px 0 #5d0000;
+            transition: 0.2s;
         }
 
-        .buttons a:hover:not(.mc-style) {
-            background: rgba(255, 77, 148, 0.8);
-            transform: translateX(5px);
+        .mc-btn:active { transform: translateY(4px); box-shadow: 0 1px 0 #5d0000; }
+
+        .btn-top { display: flex; align-items: center; gap: 10px; font-size: 0.75rem; margin-bottom: 8px; }
+        .btn-desc { font-family: 'Poppins'; font-size: 0.7rem; opacity: 0.9; font-weight: 400; text-align: center; }
+
+        /* Иконки приложений */
+        .app-icon { width: 22px; height: 22px; border-radius: 4px; }
+
+        /* Обычные соцсети */
+        .social-btn {
+            text-decoration: none;
+            color: white;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 20px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: 0.3s;
         }
 
-        .btn-content { display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 1rem; }
-        .btn-sub { font-size: 0.7rem; opacity: 0.7; margin-left: 36px; }
+        .social-btn:hover { background: rgba(255, 255, 255, 0.15); transform: scale(1.02); }
 
-        .avatar-blob {
-            width: 90px; height: 90px;
-            margin: 0 auto 15px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #ff7eb3, #70a1ff);
-            display: flex; align-items: center; justify-content: center; font-size: 2.5rem;
-        }
-
-        .sakura { position: fixed; top: -10%; pointer-events: none; z-index: 1; }
+        .sakura { position: fixed; top: -10%; pointer-events: none; z-index: 1; font-size: 1.5rem; }
     </style>
 </head>
 <body>
 
     <div class="glass-card">
-        <div class="avatar-blob">🌸</div>
-        <h1>Yapponecc</h1>
-        <p class="tagline">Support & Community ✨</p>
+        <div class="main-avatar">💎</div>
+        <h1>YAPPONECC</h1>
+        <p class="tagline">LEVEL UP YOUR SUPPORT</p>
 
         <div class="buttons">
-            <a href="https://www.donationalerts.com/r/yapponecc" class="mc-style" target="_blank">
-                <div class="btn-content">
-                    <img src="https://st.donationalerts.com/favicon.ico" class="mc-icon" alt="DA">
-                    Donate Alerts
+            <a href="https://www.donationalerts.com/r/yapponecc" class="mc-btn" target="_blank">
+                <div class="btn-top">
+                    <img src="https://www.donationalerts.com/favicon.ico" class="app-icon" alt="">
+                    DONATE ALERTS
                 </div>
-                <div style="font-size: 10px; margin-top: 5px; margin-left: 36px; font-family: 'Poppins'">Поддержи стрим монетой!</div>
+                <div class="btn-desc">Выведи сообщение на экран стрима! 🚀</div>
             </a>
 
-            <a href="#" class="mc-style" onclick="alert('Kaspi Gold: ТВОЙ_НОМЕР')">
-                <div class="btn-content">
-                    <img src="https://kaspi.kz/img/favicon/apple-touch-icon.png" class="mc-icon" alt="Kaspi">
-                    Kaspi Gold
+            <a href="https://kaspi.kz/pay/_/Transfer/Transfer?number=87079412858" class="mc-btn" style="background: #f14635; border-color: #8a1a11; box-shadow: 0 5px 0 #8a1a11;" target="_blank">
+                <div class="btn-top">
+                    <img src="https://kaspi.kz/img/favicon/apple-touch-icon.png" class="app-icon" alt="">
+                    KASPI GOLD
                 </div>
-                <div style="font-size: 10px; margin-top: 5px; margin-left: 36px; font-family: 'Poppins'">Прямой перевод (Казахстан)</div>
+                <div class="btn-desc">Прямой закид без комиссии (87079412858) 🇰🇿</div>
             </a>
 
-            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 10px 0;">
+            <div style="margin: 10px 0; font-size: 0.6rem; opacity: 0.4; font-family: 'Press Start 2P';">OTHER LINKS</div>
 
-            <a href="https://t.me/+06kgQmNA1ypjOGFi" target="_blank">
-                <div class="btn-content"><i class="fa-brands fa-telegram"></i> Telegram</div>
-                <div class="btn-sub">Анонсы и новости</div>
+            <a href="https://t.me/+06kgQmNA1ypjOGFi" class="social-btn" target="_blank">
+                <i class="fa-brands fa-telegram" style="color: #26A5E4; font-size: 1.5rem;"></i>
+                <div style="text-align: left;">
+                    <div style="font-weight: 600; font-size: 0.9rem;">Telegram Underground</div>
+                    <div style="font-size: 0.7rem; opacity: 0.6;">Схемы, новости и движ</div>
+                </div>
             </a>
 
-            <a href="https://www.tiktok.com/@yapponec" target="_blank">
-                <div class="btn-content"><i class="fa-brands fa-tiktok"></i> TikTok</div>
-                <div class="btn-sub">Мои нарезки тут</div>
+            <a href="https://www.tiktok.com/@yapponec" class="social-btn" target="_blank">
+                <i class="fa-brands fa-tiktok" style="font-size: 1.5rem;"></i>
+                <div style="text-align: left;">
+                    <div style="font-weight: 600; font-size: 0.9rem;">TikTok Base</div>
+                    <div style="font-size: 0.7rem; opacity: 0.6;">Лучшие моменты здесь</div>
+                </div>
             </a>
         </div>
     </div>
@@ -151,16 +151,16 @@
         function createSakura() {
             const leaf = document.createElement('div');
             leaf.classList.add('sakura');
-            leaf.innerHTML = '🌸';
+            leaf.innerHTML = '✨'; // Заменил лепестки на искры
             leaf.style.left = Math.random() * 100 + 'vw';
             document.body.appendChild(leaf);
             const animation = leaf.animate([
-                { transform: `translateY(-10vh) rotate(0deg)`, opacity: 0.8 },
-                { transform: `translateY(110vh) rotate(${Math.random() * 360}deg)`, opacity: 0 }
-            ], { duration: Math.random() * 3000 + 5000, easing: 'linear' });
+                { transform: `translateY(-10vh) rotate(0deg) scale(0.5)`, opacity: 0.8 },
+                { transform: `translateY(110vh) rotate(360deg) scale(1.2)`, opacity: 0 }
+            ], { duration: Math.random() * 3000 + 4000, easing: 'linear' });
             animation.onfinish = () => { leaf.remove(); };
         }
-        setInterval(createSakura, 600);
+        setInterval(createSakura, 400);
     </script>
 </body>
 </html>
