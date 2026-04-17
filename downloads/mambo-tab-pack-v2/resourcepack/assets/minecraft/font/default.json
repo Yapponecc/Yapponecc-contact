@@ -1,0 +1,26 @@
+{
+  "providers": [
+    {
+      "type": "reference",
+      "id": "minecraft:default"
+    },
+    {
+      "type": "bitmap",
+      "file": "minecraft:font/logo_tab.png",
+      "ascent": 34,
+      "height": 56,
+      "chars": [
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "minecraft:font/probe.png",
+      "ascent": 8,
+      "height": 8,
+      "chars": [
+        ""
+      ]
+    }
+  ]
+}
